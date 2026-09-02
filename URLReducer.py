@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import sys
 
 current_url = None 
