@@ -33,15 +33,17 @@ For the current input files, the reducer produced 10 URLs with counts greater th
 
 ### 2 Worker Cluster
 
-Execution time: To be measured.
+Execution time: 1m38.572s (98.572 seconds)
 
 ### 4 Worker Cluster
 
-Execution time: To be measured.
+Execution time: 1m39.185s (99.185 seconds)
 
 ### Comparison
 
-The execution times of the 2-worker and 4-worker clusters will be compared after both Dataproc runs are completed.
+The 4-worker cluster was approximately 0.613 seconds slower than the 2-worker cluster. This was somewhat surprising because adding workers might be expected to reduce execution time.
+
+However, the input for this experiment was relatively small. The additional parallelism provided by the extra workers did not provide a significant benefit for this workload. Hadoop also has overhead associated with scheduling tasks, coordinating workers, and performing the shuffle and reduce phases. For a small input, this overhead can outweigh the performance benefit of additional worker nodes.
 
 ## Resources
 
